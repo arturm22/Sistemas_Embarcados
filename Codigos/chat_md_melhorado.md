@@ -1,3 +1,4 @@
+```c
 #include <stdio.h>
 #include <opencv2/opencv.hpp>
 #include <tesseract/baseapi.h>
@@ -89,3 +90,4 @@ int main() {
 
     return 0;
 }
+```
