@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <opencv2/opencv.hpp>
+#include "cv.h"
 #include <tesseract/baseapi.h>
 #include <leptonica/allheaders.h>
 
