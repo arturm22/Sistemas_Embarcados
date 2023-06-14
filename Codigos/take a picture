@@ -1,0 +1,12 @@
+from picamera import PiCamera
+from time import sleep
+
+camera = PiCamera()
+
+camera.resolution = (600,450)
+
+camera.start_preview()
+for i in range(5):
+    sleep(2)
+    camera.capture('/home/ubuntu/image%s.jpg' % i)
+camera.stop_preview() 
