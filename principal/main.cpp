@@ -1,8 +1,8 @@
-g++ Encontrar_Placa.cpp -o Encontrar_Placa -Wall 'pkg-config --libs opencv4' (comandos para makefile)
-Código para encontrar a placa funcionando 
+//g++ Encontrar_Placa.cpp -o Encontrar_Placa -Wall 'pkg-config --libs opencv4' (comandos para makefile)
+//Código para encontrar a placa funcionando 
 #include <opencv2/opencv.hpp>
 #include <vector>
- #include <iostream>
+#include <iostream>
 #include <opencv2/core/mat.hpp>
 
 using namespace cv;
