@@ -48,7 +48,7 @@ void encontrar_a_placa(string imagem_carro) {
 
 int main (int argc, char *argv[]) {    
     if (argc < 2) {
-        printf("Preciso do caminho da imagem");
+        printf("Preciso do caminho da imagem. \n");
         return 0;
     }
     printf("caminho encontrado: %s\n", argv[1]);
