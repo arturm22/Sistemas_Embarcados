@@ -1,8 +1,11 @@
 #include <opencv2/opencv.hpp>
+#include <vector>
+#include <iostream>
+#include <opencv2/core/mat.hpp>
 
 void pre_processamento(){
     
-    cv::Mat imagem_placa = cv::imread("..\\Imagem\\Imagem_temporaria.jpg"); 
+    cv::Mat imagem_placa = cv::imread("../Imagem/Imagem_temporaria.jpg"); 
 
     if (imagem_placa.empty())
         return;
@@ -25,7 +28,7 @@ void pre_processamento(){
     // Salvar a imagem binarizada e em cinza
 
     cv::imwrite("../Imagem/placa_binarizada.jpg", img_binaria);
-    cv::imwrite("../Imagem/placa_binarizada_png.png", img_binaria);
+    //cv::imwrite("../Imagem/placa_binarizada_png.png", img_binaria);
 
     //cv2.imshow("ler_placa", imagem_placa)
     //cv2.imshow("placa_cinza", img_cinza)
@@ -33,4 +36,9 @@ void pre_processamento(){
     cv::waitKey(0); 
     cv::destroyAllWindows();
 
+}
+
+int main () {
+    pre_processamento();
+    return 0;
 }
