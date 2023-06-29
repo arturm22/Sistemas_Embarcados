@@ -1,7 +1,11 @@
 #include <opencv2/opencv.hpp>
 #include <tesseract/baseapi.h>
-
-void Ocr_da_Placa(){
+#include <leptonica/allheaders.h>
+#include <vector>
+#include <iostream>
+#include <opencv2/core/mat.hpp>
+  
+ void Ocr_da_Placa(){
     
     cv::Mat img_ocr = cv::imread("../Imagem/placa_binarizada.jpg");
 
@@ -16,4 +20,9 @@ void Ocr_da_Placa(){
 
     std::string saida = tess.GetUTF8Text();
     std::cout << saida << std::endl;
+}
+
+int main () {
+    Ocr_da_Placa();
+    return 0;
 }
