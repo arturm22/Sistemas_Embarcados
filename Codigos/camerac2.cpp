@@ -1,3 +1,5 @@
+//https://docs.opencv.org/4.x/d8/dfe/classcv_1_1VideoCapture.html
+
 #include <opencv2/core.hpp>
 #include <opencv2/videoio.hpp>
 #include <opencv2/highgui.hpp>
