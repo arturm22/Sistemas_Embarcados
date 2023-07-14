@@ -1,6 +1,9 @@
 // Include Libraries
-#include<opencv2/opencv.hpp>
-#include<iostream>
+#include <opencv2/core.hpp>
+#include <opencv2/videoio.hpp>
+#include <opencv2/highgui.hpp>
+#include <iostream>
+#include <stdio.h>
  
 // Namespace to nullify use of cv::function(); syntax
 using namespace std;

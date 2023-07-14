@@ -7,6 +7,7 @@
 #include <fstream>
 #include <string>
 #include <cstdlib>
+#include <wiringPi.h>
 
 std::string remove_nao_alfanumerico(std::string s)
 {
@@ -34,6 +35,7 @@ std::string Ocr_da_Placa(){
 
 int main () {
     //Ocr_da_Placa();
+    int led
     
     std::string placa = Ocr_da_Placa();
     //std::cout << extracted_text << std::endl;
@@ -50,6 +52,10 @@ int main () {
         while(getline(file, line)){
             if(line.find(placa2) != std::string::npos){
                 std::cout << "Encontrado:  " << line << '\n';
+                
+            } else{ 
+                
+                std::cout << "Não encontrado. Permissão de entrada negada." << std::endl;
             }
         }
         file.close();

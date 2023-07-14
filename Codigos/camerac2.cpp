@@ -1,9 +1,9 @@
-//https://docs.opencv.org/4.x/d8/dfe/classcv_1_1VideoCapture.html
-
 #include <opencv2/core.hpp>
 #include <opencv2/videoio.hpp>
 #include <opencv2/highgui.hpp>
 #include <iostream>
+#include <opencv2/opencv.hpp>
+#include <opencv2/core/mat.hpp>
 #include <stdio.h>
 using namespace cv;
 using namespace std;
@@ -16,7 +16,7 @@ int main(int, char**)
  // cap.open(0);
  // OR advance usage: select any API backend
  int deviceID = 0; // 0 = open default camera
- int apiID = cv::CAP_ANY; // 0 = autodetect default API
+ int apiID = cv::CAP_ANY; //CAP_ANY; // 0 = autodetect default API
  // open selected camera using selected API
  cap.open(deviceID, apiID);
  // check if we succeeded
@@ -37,42 +37,12 @@ int main(int, char**)
  break;
  }
  // show live and wait for a key with timeout long enough to show images
+ cvtColor(frame, frame, COLOR_BGR2GRAY);
  imshow("Live", frame);
  if (waitKey(5) >= 0)
+
  break;
  }
  // the camera will be deinitialized automatically in VideoCapture destructor
  return 0;
-}
-
-
-#include <iostream>
-#include <opencv2/opencv.hpp>
-#include <raspicam/raspicam_cv.h>
-
-using namespace cv;
-using namespace std;
-
-int main(int argc, char** argv)
-{
-    Mat image, output;
-    raspicam::RaspiCam_Cv cap;
-    if (!cap.isOpened())
-    {
-        cout << "Could not initialize capturing...\n";
-        return 0;
-    }
-    int frameNumber = 0;
-    while (1)
-    {
-        cap.grab();
-        cap.retrieve(output);
-        imshow("webcam input", output);
-        string filename = "frame" + to_string(frameNumber) + ".jpg";
-        imwrite(filename, output);
-        frameNumber++;
-        char c = (char)waitKey(10);
-        if (c == 27)
-            break;
-    }
 }

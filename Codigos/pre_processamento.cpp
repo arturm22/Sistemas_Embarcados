@@ -30,8 +30,8 @@ void pre_processamento(){
     cv::imwrite("../Imagem/placa_binarizada.jpg", img_binaria);
     //cv::imwrite("../Imagem/placa_binarizada_png.png", img_binaria);
 
-    //cv2.imshow("ler_placa", imagem_placa)
-    //cv2.imshow("placa_cinza", img_cinza)
+    cv::imshow("ler_placa", imagem_placa);
+    cv::imshow("placa_cinza", img_cinza);
     cv::imshow("placa_binaria", img_binaria);
     cv::waitKey(0); 
     cv::destroyAllWindows();
