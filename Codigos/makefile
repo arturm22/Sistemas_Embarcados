@@ -28,20 +28,3 @@ compilar_OCR: # compilando o arquivo main.cpp para main
 
 executar_OCR: # execultando programa principal com um caminho de imagem
 	./OCR
-
-clear: limpar_imagens limpar_main # comando para limpar tudo
-
-limpar_main: 
-	rm -rf ./main 
-
-limpar_imagens: 
-	rm -rf ./imagens/*
-
-Abrir_CSV:
-	@echo "Abrindo banco de dados... \n"
-	cat ./Bilioteca/Moradores.csv
-
-Pegar_informacoes_CSV:
-	@echi "A placa desejada é:\n"
-	grep ATF7357 Moradores.csv
-
